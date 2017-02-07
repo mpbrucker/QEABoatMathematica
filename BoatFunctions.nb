@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    267901,       5463]
-NotebookOptionsPosition[    261206,       5259]
-NotebookOutlinePosition[    261703,       5279]
-CellTagsIndexPosition[    261660,       5276]
+NotebookDataLength[    279169,       5780]
+NotebookOptionsPosition[    271142,       5544]
+NotebookOutlinePosition[    271639,       5564]
+CellTagsIndexPosition[    271596,       5561]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -314,7 +314,115 @@ Cell[BoxData[
 \\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
 during this calculation.\"",2,1,26,29078792504292561482,"Local"},
   "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.6954034403724065`*^9}]
+ CellChangeTimes->{3.6954034403724065`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,3,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217905727787`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,4,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217907053103`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,5,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.69542179075343*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,16,6,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217908246255`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,65,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484917366973*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,66,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484917446997*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,67,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849174851007`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,149,68,29079308986915357884,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849175212297`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,73,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484918124642*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,74,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849181761894`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,75,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484918231413*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,149,76,29079308986915357884,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484918270521*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -489,7 +597,79 @@ Cell[BoxData[
 \\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
 during this calculation.\"",2,1,39,29078792504292561482,"Local"},
   "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.695403441502528*^9}]
+ CellChangeTimes->{3.695403441502528*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,7,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695421791098241*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,8,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217911393447`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,9,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217911824207`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,16,10,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695421791233549*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,69,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484917713172*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,70,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849177753134`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,71,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849178104086`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,149,72,29079308986915357884,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849178465023`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -665,7 +845,79 @@ Cell[BoxData[
 \\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
 during this calculation.\"",2,1,35,29078792504292561482,"Local"},
   "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.695403441111989*^9}]
+ CellChangeTimes->{3.695403441111989*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,11,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217913639345`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,12,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695421791406044*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,16,13,29078912080278502563,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217914501543`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,16,14,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217914929676`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,77,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849183734255`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,78,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849184368615`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,149,79,29079308986915357884,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954849184759636`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,149,80,29079308986915357884,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695484918516076*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -861,7 +1113,40 @@ Cell[BoxData[
 \\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
 during this calculation.\"",2,1,43,29078792504292561482,"Local"},
   "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.69540344176395*^9}]
+ CellChangeTimes->{3.69540344176395*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,16,15,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695421791655959*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,16,16,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695421791729241*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,16,17,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217917733774`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,16,18,29078912080278502563,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6954217918135176`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -5258,7 +5543,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{958, 988},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 PrintingCopies->1,
 PrintingPageRange->{32000, 32000},
 PrintingOptions->{"Magnification"->1.,
@@ -5294,175 +5579,207 @@ Cell[8363, 238, 2284, 42, 122, "Output"],
 Cell[10650, 282, 294, 7, 21, "Message"],
 Cell[10947, 291, 294, 7, 21, "Message"],
 Cell[11244, 300, 294, 7, 21, "Message"],
-Cell[11541, 309, 347, 7, 21, "Message"]
+Cell[11541, 309, 347, 7, 21, "Message"],
+Cell[11891, 318, 294, 7, 21, "Message"],
+Cell[12188, 327, 294, 7, 21, "Message"],
+Cell[12485, 336, 291, 7, 21, "Message"],
+Cell[12779, 345, 347, 7, 21, "Message"],
+Cell[13129, 354, 294, 7, 21, "Message"],
+Cell[13426, 363, 294, 7, 21, "Message"],
+Cell[13723, 372, 296, 7, 21, "Message"],
+Cell[14022, 381, 349, 7, 21, "Message"],
+Cell[14374, 390, 294, 7, 21, "Message"],
+Cell[14671, 399, 296, 7, 21, "Message"],
+Cell[14970, 408, 294, 7, 21, "Message"],
+Cell[15267, 417, 347, 7, 21, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11925, 321, 871, 23, 50, "Input"],
-Cell[12799, 346, 1851, 37, 130, "Output"],
-Cell[14653, 385, 293, 7, 21, "Message"],
-Cell[14949, 394, 291, 7, 21, "Message"],
-Cell[15243, 403, 291, 7, 21, "Message"],
-Cell[15537, 412, 346, 7, 21, "Message"],
-Cell[15886, 421, 294, 7, 21, "Message"],
-Cell[16183, 430, 294, 7, 21, "Message"],
-Cell[16480, 439, 294, 7, 21, "Message"],
-Cell[16777, 448, 347, 7, 21, "Message"],
-Cell[17127, 457, 292, 7, 21, "Message"],
-Cell[17422, 466, 294, 7, 21, "Message"],
-Cell[17719, 475, 294, 7, 21, "Message"],
-Cell[18016, 484, 345, 7, 21, "Message"]
+Cell[15651, 429, 871, 23, 50, "Input"],
+Cell[16525, 454, 1851, 37, 130, "Output"],
+Cell[18379, 493, 293, 7, 21, "Message"],
+Cell[18675, 502, 291, 7, 21, "Message"],
+Cell[18969, 511, 291, 7, 21, "Message"],
+Cell[19263, 520, 346, 7, 21, "Message"],
+Cell[19612, 529, 294, 7, 21, "Message"],
+Cell[19909, 538, 294, 7, 21, "Message"],
+Cell[20206, 547, 294, 7, 21, "Message"],
+Cell[20503, 556, 347, 7, 21, "Message"],
+Cell[20853, 565, 292, 7, 21, "Message"],
+Cell[21148, 574, 294, 7, 21, "Message"],
+Cell[21445, 583, 294, 7, 21, "Message"],
+Cell[21742, 592, 345, 7, 21, "Message"],
+Cell[22090, 601, 292, 7, 21, "Message"],
+Cell[22385, 610, 294, 7, 21, "Message"],
+Cell[22682, 619, 294, 7, 21, "Message"],
+Cell[22979, 628, 346, 7, 21, "Message"],
+Cell[23328, 637, 294, 7, 21, "Message"],
+Cell[23625, 646, 296, 7, 21, "Message"],
+Cell[23924, 655, 296, 7, 21, "Message"],
+Cell[24223, 664, 349, 7, 21, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18398, 496, 928, 23, 50, "Input"],
-Cell[19329, 521, 2011, 38, 130, "Output"],
-Cell[21343, 561, 293, 7, 21, "Message"],
-Cell[21639, 570, 294, 7, 21, "Message"],
-Cell[21936, 579, 294, 7, 21, "Message"],
-Cell[22233, 588, 347, 7, 21, "Message"],
-Cell[22583, 597, 293, 7, 21, "Message"],
-Cell[22879, 606, 295, 7, 21, "Message"],
-Cell[23177, 615, 295, 7, 21, "Message"],
-Cell[23475, 624, 344, 7, 21, "Message"],
-Cell[23822, 633, 296, 7, 21, "Message"],
-Cell[24121, 642, 294, 7, 21, "Message"],
-Cell[24418, 651, 296, 7, 21, "Message"],
-Cell[24717, 660, 345, 7, 21, "Message"]
+Cell[24609, 676, 928, 23, 50, "Input"],
+Cell[25540, 701, 2011, 38, 130, "Output"],
+Cell[27554, 741, 293, 7, 21, "Message"],
+Cell[27850, 750, 294, 7, 21, "Message"],
+Cell[28147, 759, 294, 7, 21, "Message"],
+Cell[28444, 768, 347, 7, 21, "Message"],
+Cell[28794, 777, 293, 7, 21, "Message"],
+Cell[29090, 786, 295, 7, 21, "Message"],
+Cell[29388, 795, 295, 7, 21, "Message"],
+Cell[29686, 804, 344, 7, 21, "Message"],
+Cell[30033, 813, 296, 7, 21, "Message"],
+Cell[30332, 822, 294, 7, 21, "Message"],
+Cell[30629, 831, 296, 7, 21, "Message"],
+Cell[30928, 840, 345, 7, 21, "Message"],
+Cell[31276, 849, 297, 7, 21, "Message"],
+Cell[31576, 858, 295, 7, 21, "Message"],
+Cell[31874, 867, 297, 7, 21, "Message"],
+Cell[32174, 876, 348, 7, 21, "Message"],
+Cell[32525, 885, 298, 7, 21, "Message"],
+Cell[32826, 894, 298, 7, 21, "Message"],
+Cell[33127, 903, 298, 7, 21, "Message"],
+Cell[33428, 912, 347, 7, 21, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25099, 672, 779, 21, 50, "Input"],
-Cell[25881, 695, 1855, 36, 130, "Output"],
-Cell[27739, 733, 286, 6, 21, "Message"],
-Cell[28028, 741, 288, 6, 21, "Message"],
-Cell[28319, 749, 286, 6, 21, "Message"],
-Cell[28608, 757, 347, 7, 21, "Message"],
-Cell[28958, 766, 287, 6, 21, "Message"],
-Cell[29248, 774, 287, 6, 21, "Message"],
-Cell[29538, 782, 287, 6, 21, "Message"],
-Cell[29828, 790, 344, 7, 21, "Message"],
-Cell[30175, 799, 287, 6, 21, "Message"],
-Cell[30465, 807, 287, 6, 21, "Message"],
-Cell[30755, 815, 287, 6, 21, "Message"],
-Cell[31045, 823, 344, 7, 21, "Message"],
-Cell[31392, 832, 288, 6, 21, "Message"],
-Cell[31683, 840, 288, 6, 21, "Message"],
-Cell[31974, 848, 286, 6, 21, "Message"],
-Cell[32263, 856, 344, 7, 21, "Message"]
+Cell[33812, 924, 779, 21, 50, "Input"],
+Cell[34594, 947, 1855, 36, 130, "Output"],
+Cell[36452, 985, 286, 6, 21, "Message"],
+Cell[36741, 993, 288, 6, 21, "Message"],
+Cell[37032, 1001, 286, 6, 21, "Message"],
+Cell[37321, 1009, 347, 7, 21, "Message"],
+Cell[37671, 1018, 287, 6, 21, "Message"],
+Cell[37961, 1026, 287, 6, 21, "Message"],
+Cell[38251, 1034, 287, 6, 21, "Message"],
+Cell[38541, 1042, 344, 7, 21, "Message"],
+Cell[38888, 1051, 287, 6, 21, "Message"],
+Cell[39178, 1059, 287, 6, 21, "Message"],
+Cell[39468, 1067, 287, 6, 21, "Message"],
+Cell[39758, 1075, 344, 7, 21, "Message"],
+Cell[40105, 1084, 288, 6, 21, "Message"],
+Cell[40396, 1092, 288, 6, 21, "Message"],
+Cell[40687, 1100, 286, 6, 21, "Message"],
+Cell[40976, 1108, 344, 7, 21, "Message"],
+Cell[41323, 1117, 287, 6, 21, "Message"],
+Cell[41613, 1125, 287, 6, 21, "Message"],
+Cell[41903, 1133, 289, 6, 21, "Message"],
+Cell[42195, 1141, 348, 7, 21, "Message"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32656, 869, 124, 1, 49, "Subsection"],
-Cell[32783, 872, 4686, 127, 180, "Input",
+Cell[42592, 1154, 124, 1, 49, "Subsection"],
+Cell[42719, 1157, 4686, 127, 180, "Input",
  InitializationCell->True],
-Cell[37472, 1001, 4243, 114, 218, "Input",
+Cell[47408, 1286, 4243, 114, 218, "Input",
  InitializationCell->True],
-Cell[41718, 1117, 5062, 141, 351, "Input",
+Cell[51654, 1402, 5062, 141, 351, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[46805, 1262, 177, 3, 30, "Input"],
-Cell[46985, 1267, 141, 2, 30, "Output"]
+Cell[56741, 1547, 177, 3, 30, "Input"],
+Cell[56921, 1552, 141, 2, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47163, 1274, 1470, 44, 88, "Input"],
-Cell[48636, 1320, 5940, 105, 373, "Output"],
-Cell[54579, 1427, 142, 2, 30, "Output"],
-Cell[54724, 1431, 157, 3, 30, "Output"]
+Cell[57099, 1559, 1470, 44, 88, "Input"],
+Cell[58572, 1605, 5940, 105, 373, "Output"],
+Cell[64515, 1712, 142, 2, 30, "Output"],
+Cell[64660, 1716, 157, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54918, 1439, 210, 5, 30, "Input"],
-Cell[55131, 1446, 139, 3, 30, "Output"]
+Cell[64854, 1724, 210, 5, 30, "Input"],
+Cell[65067, 1731, 139, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[55307, 1454, 440, 12, 30, "Input"],
-Cell[55750, 1468, 116, 1, 30, "Output"]
+Cell[65243, 1739, 440, 12, 30, "Input"],
+Cell[65686, 1753, 116, 1, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[55903, 1474, 1237, 32, 69, "Input"],
-Cell[57143, 1508, 385, 6, 30, "Output"],
-Cell[57531, 1516, 17563, 311, 389, "Output"]
+Cell[65839, 1759, 1237, 32, 69, "Input"],
+Cell[67079, 1793, 385, 6, 30, "Output"],
+Cell[67467, 1801, 17563, 311, 389, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[75131, 1832, 253, 5, 30, "Input"],
-Cell[75387, 1839, 681, 22, 50, "Output"]
+Cell[85067, 2117, 253, 5, 30, "Input"],
+Cell[85323, 2124, 681, 22, 50, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76105, 1866, 219, 4, 30, "Input"],
-Cell[76327, 1872, 112, 1, 30, "Output"]
+Cell[86041, 2151, 219, 4, 30, "Input"],
+Cell[86263, 2157, 112, 1, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76476, 1878, 354, 7, 30, "Input"],
-Cell[76833, 1887, 339, 6, 30, "Output"]
+Cell[86412, 2163, 354, 7, 30, "Input"],
+Cell[86769, 2172, 339, 6, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77209, 1898, 364, 9, 30, "Input"],
-Cell[77576, 1909, 669, 21, 50, "Output"]
+Cell[87145, 2183, 364, 9, 30, "Input"],
+Cell[87512, 2194, 669, 21, 50, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[78282, 1935, 1119, 33, 85, "Input"],
-Cell[79404, 1970, 123227, 2021, 486, "Output"]
+Cell[88218, 2220, 1119, 33, 85, "Input"],
+Cell[89340, 2255, 123227, 2021, 486, "Output"]
 }, Open  ]],
-Cell[202646, 3994, 2303, 55, 107, "Input"],
+Cell[212582, 4279, 2303, 55, 107, "Input"],
 Cell[CellGroupData[{
-Cell[204974, 4053, 1685, 43, 88, "Input"],
-Cell[206662, 4098, 28804, 495, 631, "Output"]
+Cell[214910, 4338, 1685, 43, 88, "Input"],
+Cell[216598, 4383, 28804, 495, 631, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[235515, 4599, 108, 1, 49, "Subsection"],
-Cell[235626, 4602, 3619, 94, 180, "Input",
+Cell[245451, 4884, 108, 1, 49, "Subsection"],
+Cell[245562, 4887, 3619, 94, 180, "Input",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[239270, 4700, 917, 22, 88, "Input"],
-Cell[240190, 4724, 213, 3, 30, "Output"]
+Cell[249206, 4985, 917, 22, 88, "Input"],
+Cell[250126, 5009, 213, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[240440, 4732, 126, 2, 30, "Input"],
-Cell[240569, 4736, 109, 1, 30, "Output"]
+Cell[250376, 5017, 126, 2, 30, "Input"],
+Cell[250505, 5021, 109, 1, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[240715, 4742, 806, 22, 50, "Input"],
-Cell[241524, 4766, 106, 2, 30, "Output"]
+Cell[250651, 5027, 806, 22, 50, "Input"],
+Cell[251460, 5051, 106, 2, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[241667, 4773, 214, 5, 30, "Input"],
-Cell[241884, 4780, 200, 5, 30, "Output"]
+Cell[251603, 5058, 214, 5, 30, "Input"],
+Cell[251820, 5065, 200, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[242121, 4790, 211, 5, 30, "Input"],
-Cell[242335, 4797, 460, 9, 39, "Message"],
-Cell[242798, 4808, 315, 7, 21, "Message"],
-Cell[243116, 4817, 243, 6, 21, "Message"],
-Cell[243362, 4825, 420, 8, 21, "Message"],
-Cell[243785, 4835, 1632, 25, 59, "Message"],
-Cell[245420, 4862, 461, 9, 39, "Message"],
-Cell[245884, 4873, 315, 7, 21, "Message"],
-Cell[246202, 4882, 243, 6, 21, "Message"],
-Cell[246448, 4890, 418, 8, 21, "Message"],
-Cell[246869, 4900, 1634, 25, 59, "Message"],
-Cell[248506, 4927, 463, 9, 39, "Message"],
-Cell[248972, 4938, 355, 7, 21, "Message"],
-Cell[249330, 4947, 317, 7, 21, "Message"],
-Cell[249650, 4956, 398, 8, 21, "Message"],
-Cell[250051, 4966, 243, 6, 21, "Message"],
-Cell[250297, 4974, 352, 7, 21, "Message"],
-Cell[250652, 4983, 418, 8, 21, "Message"],
-Cell[251073, 4993, 352, 7, 21, "Message"],
-Cell[251428, 5002, 1634, 25, 59, "Message"],
-Cell[253065, 5029, 632, 18, 43, "Output"]
+Cell[252057, 5075, 211, 5, 30, "Input"],
+Cell[252271, 5082, 460, 9, 39, "Message"],
+Cell[252734, 5093, 315, 7, 21, "Message"],
+Cell[253052, 5102, 243, 6, 21, "Message"],
+Cell[253298, 5110, 420, 8, 21, "Message"],
+Cell[253721, 5120, 1632, 25, 59, "Message"],
+Cell[255356, 5147, 461, 9, 39, "Message"],
+Cell[255820, 5158, 315, 7, 21, "Message"],
+Cell[256138, 5167, 243, 6, 21, "Message"],
+Cell[256384, 5175, 418, 8, 21, "Message"],
+Cell[256805, 5185, 1634, 25, 59, "Message"],
+Cell[258442, 5212, 463, 9, 39, "Message"],
+Cell[258908, 5223, 355, 7, 21, "Message"],
+Cell[259266, 5232, 317, 7, 21, "Message"],
+Cell[259586, 5241, 398, 8, 21, "Message"],
+Cell[259987, 5251, 243, 6, 21, "Message"],
+Cell[260233, 5259, 352, 7, 21, "Message"],
+Cell[260588, 5268, 418, 8, 21, "Message"],
+Cell[261009, 5278, 352, 7, 21, "Message"],
+Cell[261364, 5287, 1634, 25, 59, "Message"],
+Cell[263001, 5314, 632, 18, 43, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[253746, 5053, 123, 1, 49, "Subsection"],
-Cell[253872, 5056, 4925, 133, 335, "Input"],
+Cell[263682, 5338, 123, 1, 49, "Subsection"],
+Cell[263808, 5341, 4925, 133, 335, "Input"],
 Cell[CellGroupData[{
-Cell[258822, 5193, 498, 12, 30, "Input"],
-Cell[259323, 5207, 77, 1, 30, "Output"]
+Cell[268758, 5478, 498, 12, 30, "Input"],
+Cell[269259, 5492, 77, 1, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[259437, 5213, 148, 3, 30, "Input"],
-Cell[259588, 5218, 141, 3, 30, "Output"]
+Cell[269373, 5498, 148, 3, 30, "Input"],
+Cell[269524, 5503, 141, 3, 30, "Output"]
 }, Open  ]],
-Cell[259744, 5224, 918, 21, 30, InheritFromParent],
-Cell[260665, 5247, 513, 8, 30, "Output"]
+Cell[269680, 5509, 918, 21, 30, InheritFromParent],
+Cell[270601, 5532, 513, 8, 30, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
