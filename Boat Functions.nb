@@ -1,0 +1,1226 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     49431,       1218]
+NotebookOptionsPosition[     46709,       1131]
+NotebookOutlinePosition[     47057,       1146]
+CellTagsIndexPosition[     47014,       1143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Candidate Boat Designs", "Title",
+ CellChangeTimes->{{3.695249222217491*^9, 3.69524922905873*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["3D Functions", "Subsection",
+ CellChangeTimes->{{3.6952505612197795`*^9, 3.6952505637013955`*^9}, {
+  3.6952522872941933`*^9, 3.695252290552759*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"boat1", "[", "n_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"y", "/", "n"}], "]"}], "^", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "3"}], ")"}]}], "<=", "z", "\[LessEqual]", 
+   "2"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"expBoat", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"Abs", "[", 
+      RowBox[{"y", "/", 
+       RowBox[{"(", 
+        RowBox[{"n", "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"x", "^", "2"}], "-", "4"}], ")"}]}], ")"}]}], "]"}], 
+     "]"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "-", "4"}], ")"}], "/", "6"}]}], 
+   "\[LessEqual]", "z", "\[LessEqual]", "1"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"powBoat", "[", "pow_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"2", "*", 
+       RowBox[{
+        RowBox[{"Abs", "[", 
+         RowBox[{"y", "/", "2"}], "]"}], "^", "pow"}]}], ")"}], "+", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "/", "2"}]}], "\[LessEqual]", "z", 
+    "\[LessEqual]", "2"}], " ", "&&", " ", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", "\[LessEqual]", " ", "x", "\[LessEqual]", " ", 
+    "2"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cubicBoat", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "/", 
+          RowBox[{"(", 
+           RowBox[{"n", "*", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"x", "^", "2"}], "-", "4"}], ")"}]}], ")"}]}], ")"}], 
+        "-", "1"}], ")"}], "^", "3"}], "+", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "/", "2"}], "+", "1"}], "\[LessEqual]", "z", 
+    "\[LessEqual]", "2"}], "&&", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"y", "/", 
+           RowBox[{"(", 
+            RowBox[{"n", "*", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"x", "^", "2"}], "-", "4"}], ")"}]}], ")"}]}], ")"}], 
+         "+", "1"}], ")"}], "^", "3"}]}], "+", "1", "+", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "/", "2"}]}], "\[LessEqual]", "z", 
+    "\[LessEqual]", "2"}], "&&", 
+   RowBox[{
+    RowBox[{"-", "1.99"}], "\[LessEqual]", "x", "\[LessEqual]", 
+    "1.99"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"points", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"polyBoat", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "*", 
+     RowBox[{"Fit", "[", 
+      RowBox[{"points", ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "y", ",", 
+         RowBox[{"y", "^", "2"}], ",", 
+         RowBox[{"y", "^", "3"}], ",", 
+         RowBox[{"y", "^", "4"}]}], "}"}], ",", "y"}], "]"}]}], 
+    "\[LessEqual]", "z", "\[LessEqual]", "2"}], "&&", 
+   RowBox[{
+    RowBox[{"-", "2"}], "\[LessEqual]", "x", "\[LessEqual]", 
+    "2"}]}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAmIQPaFXY6Jix2vHWf0yU0G0A/f1OSA6qdxgLohmaFVY
+CqI9dtkuA9Fl0XyrQDQPn8sGEP1xdvRWEB29sP80WL+U+iUQnVMbfx1Eb1Z1
+fgyiN13qAtOWeZ1vQLQKy4W3IJpjk/BvEH2ELQpMazzXYFIC0n+4FnKDaJPH
+uiIgepZ4hziI/vDMVgZEn3j/XBVEW/Ct0gLR55r364JosQVvTEC0xpNX9iB6
+kte5EBDNFXANTEv/fpAPopueHW0A0UaHDrSA6G0bS9pA9AzrE10g2mbh/elg
+czjuzwfR+77/WgyiOZxOrwS7Y5XRKhAd9KB9HYjO37p/K4hW2XJzD4h+t+sZ
+mO5xc+BVBtL+HvPlQLTNwQhlED2ZWV4VRHNt4NYE0RbdrgYg2q/e1BREBz63
+BdMAnBjEjQ==
+  "]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"boat2", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.6952507234851885`*^9, 3.69525072491199*^9}, {
+  3.6952513276851225`*^9, 3.695251327954833*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"Abs", "[", 
+     FractionBox["y", 
+      RowBox[{
+       RowBox[{"-", "4"}], "+", 
+       SuperscriptBox["x", "2"]}]], "]"}]], "+", 
+   RowBox[{
+    FractionBox["1", "6"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "4"}], "+", 
+      SuperscriptBox["x", "2"]}], ")"}]}]}], "\[LessEqual]", "z", 
+  "\[LessEqual]", "1"}]], "Output",
+ CellChangeTimes->{3.6952538043230295`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"polyBoat", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{
+  3.6952513374059305`*^9, {3.6952538230265374`*^9, 3.6952538247591205`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1.0000000000000013`", "\[VeryThinSpace]", "-", 
+    RowBox[{"1.1661028107455707`", " ", "x"}], "-", 
+    RowBox[{"0.05381928570122341`", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"0.12140884735658174`", " ", 
+     SuperscriptBox["x", "3"]}], "+", 
+    RowBox[{"0.09851324909021121`", " ", 
+     SuperscriptBox["x", "4"]}]}], "\[LessEqual]", "z", "\[LessEqual]", "2"}],
+   "&&", 
+  RowBox[{
+   RowBox[{"-", "2"}], "\[LessEqual]", "y", "\[LessEqual]", "2"}]}]], "Output",
+ CellChangeTimes->{3.6952513374520836`*^9, 3.6952538269579268`*^9, 
+  3.6952538574746866`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"RegionPlot3D", "[", 
+    RowBox[{
+     RowBox[{"expBoat", "[", "n", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "1.999"}], ",", "1.9999"}], "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.4", ",", "1.5", ",", "2", ",", "2.5", ",", "3"}], "}"}]}], 
+    "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.695250591421285*^9, {3.695250680573187*^9, 3.6952507016157455`*^9}, {
+   3.6952511240513153`*^9, 3.6952511460205235`*^9}, {3.69525123367325*^9, 
+   3.695251241042699*^9}, {3.695251313515417*^9, 3.695251355844964*^9}, {
+   3.695251430576348*^9, 3.695251448368596*^9}, {3.6952515645789366`*^9, 
+   3.6952515829945903`*^9}, {3.6952516529570055`*^9, 
+   3.6952516612684183`*^9}, {3.6952518124314365`*^9, 3.6952518132897243`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 0.4, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], {0.4, 1.5, 2, 2.5, 3}}}, Typeset`size$$ = {
+    360., {202., 208.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$21176$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0.4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$21176$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> RegionPlot3D[
+        $CellContext`expBoat[$CellContext`n$$], {$CellContext`y, -2, 
+         2}, {$CellContext`z, 0, 2}, {$CellContext`x, -1.999, 1.9999}, Axes -> 
+        True, AxesLabel -> Automatic], 
+      "Specifications" :> {{$CellContext`n$$, {0.4, 1.5, 2, 2.5, 3}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {246., 253.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6952507023868227`*^9, 3.6952507066517296`*^9}, {
+   3.69525074601946*^9, 3.695250761899802*^9}, 3.695250838310381*^9, 
+   3.6952508845380077`*^9, {3.695251124431302*^9, 3.695251146406477*^9}, {
+   3.695251236798394*^9, 3.6952512422107077`*^9}, {3.695251318654854*^9, 
+   3.6952513561707697`*^9}, {3.695251431459534*^9, 3.6952514485420046`*^9}, {
+   3.6952515659037523`*^9, 3.6952515833962336`*^9}, {3.6952516561727858`*^9, 
+   3.695251661420812*^9}, 3.6952518573458624`*^9, 3.69525422861275*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,37,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117528975067`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,38,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752938987*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"expBoat\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,39,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752995635*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,119,40,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311753036908*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"RegionPlot3D", "[", 
+    RowBox[{
+     RowBox[{"powBoat", "[", "n", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.4", ",", "1", ",", "1.5", ",", "2", ",", "2.5", ",", "3"}], 
+      "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6952518315603275`*^9, 3.695251833217743*^9}, {
+  3.6952519911406384`*^9, 3.695251991414364*^9}, {3.69525207004243*^9, 
+  3.695252083661654*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], {0.4, 1, 1.5, 2, 2.5, 3}}}, Typeset`size$$ = {
+    360., {202., 208.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$13564$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0.4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$13564$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> RegionPlot3D[
+        $CellContext`powBoat[$CellContext`n$$], {$CellContext`y, -2, 
+         2}, {$CellContext`z, 0, 2}, {$CellContext`x, -2, 2}, Axes -> True, 
+        AxesLabel -> Automatic], 
+      "Specifications" :> {{$CellContext`n$$, {0.4, 1, 1.5, 2, 2.5, 3}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {250., 257.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.695251833576661*^9, 3.695251992134303*^9, {3.69525207375834*^9, 
+   3.695252083854189*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,25,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117518332877`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,26,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752014213*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"powBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,27,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117520853977`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,119,28,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117521545854`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"RegionPlot3D", "[", 
+    RowBox[{
+     RowBox[{"cubicBoat", "[", "n", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "1.99"}], ",", "1.99"}], "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.2", ",", "1", ",", "1.5", ",", "2", ",", "2.5", ",", "3"}], 
+      "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.695252440381179*^9, 3.6952524420015073`*^9}, {
+  3.6952526092350073`*^9, 3.695252635246842*^9}, {3.695252924506321*^9, 
+  3.6952529246256237`*^9}, {3.695252977945733*^9, 3.695252979066746*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 0.2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], {0.2, 1, 1.5, 2, 2.5, 3}}}, Typeset`size$$ = {
+    360., {202., 208.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$16832$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0.2}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$16832$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> RegionPlot3D[
+        $CellContext`cubicBoat[$CellContext`n$$], {$CellContext`y, -2, 
+         2}, {$CellContext`z, 0, 2}, {$CellContext`x, -1.99, 1.99}, Axes -> 
+        True, AxesLabel -> Automatic], 
+      "Specifications" :> {{$CellContext`n$$, {0.2, 1, 1.5, 2, 2.5, 3}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {250., 257.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6952524429389477`*^9, 3.6952524561158066`*^9}, 
+   3.6952525357545524`*^9, {3.6952526041645975`*^9, 3.695252635480459*^9}, {
+   3.69525282135437*^9, 3.695252844226864*^9}, 3.6952529249735465`*^9, {
+   3.69525298032903*^9, 3.695252986063205*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,29,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752298472*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,30,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117523360987`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"cubicBoat\\\", \\\"[\\\", \\\"0.2`\\\", \
+\\\"]\\\"}]\\) must be a Boolean function.\"",2,119,31,29078185542545304571,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117523741965`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,119,32,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117524321957`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"RegionPlot3D", "[", 
+    RowBox[{
+     RowBox[{"polyBoat", "[", "n", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "1.99"}], ",", "1.99"}], "}"}], ",", 
+     RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.2", ",", "1", ",", "1.5", ",", "2", ",", "2.5", ",", "3"}], 
+      "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6952537615698924`*^9, 3.695253762666794*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], {0.2, 1, 1.5, 2, 2.5, 3}}}, Typeset`size$$ = {
+    736., {3., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$19854$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0.2}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$19854$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> RegionPlot3D[
+        $CellContext`polyBoat[$CellContext`n$$], {$CellContext`y, -2, 
+         2}, {$CellContext`z, 0, 2}, {$CellContext`x, -1.99, 1.99}, Axes -> 
+        True, AxesLabel -> Automatic], 
+      "Specifications" :> {{$CellContext`n$$, {0.2, 1, 1.5, 2, 2.5, 3}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{787., {53., 60.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.695253762992656*^9, 3.6952538088901153`*^9, 
+  3.6952538616016054`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,33,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752552084*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,34,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311752593711*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "RegionPlot3D","boolf",
+   "\"\\!\\(\\*RowBox[{\\\"polyBoat\\\", \\\"[\\\", \\\"1\\\", \\\"]\\\"}]\\) \
+must be a Boolean function.\"",2,119,35,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117526403203`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"RegionPlot3D\\\", \
+\\\"::\\\", \\\"boolf\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"",2,119,36,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117526934595`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculation of COM/COB of 3D Boats", "Subsection",
+ CellChangeTimes->{{3.695252297870031*^9, 3.6952523102104015`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mass", "[", 
+   RowBox[{"n_", "?", "NumberQ"}], "]"}], ":=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"1", "/", "4"}], ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+     RowBox[{"ImplicitRegion", "[", 
+      RowBox[{
+       RowBox[{"expBoat", "[", "n", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"AccuracyGoal", "\[Rule]", "5"}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"comX", "[", 
+   RowBox[{"n_", "?", "NumberQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"x", "/", "4"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+      RowBox[{"ImplicitRegion", "[", 
+       RowBox[{
+        RowBox[{"boat", "[", "n", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], "]"}], "/", 
+   RowBox[{"mass", "[", "n", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"comY", "[", 
+   RowBox[{"n_", "?", "NumberQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"y", "/", "4"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+      RowBox[{"ImplicitRegion", "[", 
+       RowBox[{
+        RowBox[{"boat", "[", "n", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], "]"}], "/", 
+   RowBox[{"mass", "[", "n", "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"comZ", "[", 
+   RowBox[{"n_", "?", "NumberQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"z", "/", "4"}], ",", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+      RowBox[{"ImplicitRegion", "[", 
+       RowBox[{
+        RowBox[{"boat", "[", "n", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], "]"}], "/", 
+   RowBox[{"mass", "[", "n", "]"}]}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.69525231180865*^9, 3.6952523118146687`*^9}, {
+  3.6952539828594913`*^9, 3.6952540049058437`*^9}, {3.69525413883917*^9, 
+  3.695254140102503*^9}, {3.6952548587390623`*^9, 3.695254866048534*^9}, {
+  3.6952549618048897`*^9, 3.695254971084528*^9}, {3.6952550067403364`*^9, 
+  3.6952550317398405`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"water", "[", 
+   RowBox[{"theta_", ",", " ", "b_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"theta", "\[Equal]", 
+     RowBox[{"\[Pi]", "/", "2"}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], "\[LessEqual]", "y", "\[LessEqual]", "0"}], "&&", 
+     RowBox[{"0", "\[LessEqual]", "z", "\[LessEqual]", "2"}]}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"theta", "<", 
+       RowBox[{"\[Pi]", "/", "2"}]}], ",", 
+      RowBox[{"z", "\[LessEqual]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Tan", "[", 
+          RowBox[{"-", "theta"}], "]"}], "*", "y"}], "+", "b"}]}], ",", 
+      RowBox[{"z", "\[GreaterEqual]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Tan", "[", 
+          RowBox[{"-", "theta"}], "]"}], "*", "y"}], "+", "b"}]}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"submergedRegion", "[", 
+   RowBox[{"n_", ",", "theta_", ",", "b_"}], "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"expBoat", "[", "n", "]"}], " ", "&&", " ", 
+   RowBox[{"water", "[", 
+    RowBox[{"theta", ",", "b"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"massOfWater", "[", 
+   RowBox[{
+    RowBox[{"n_", "?", "NumberQ"}], ",", 
+    RowBox[{"theta_", "?", "NumberQ"}], ",", 
+    RowBox[{"b_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+     RowBox[{"ImplicitRegion", "[", 
+      RowBox[{
+       RowBox[{"submergedRegion", "[", 
+        RowBox[{"n", ",", "theta", ",", "b"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"AccuracyGoal", "\[Rule]", "5"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"findB", "[", 
+   RowBox[{"n_", ",", "theta_"}], "]"}], " ", ":=", 
+  RowBox[{"FindRoot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"mass", "[", "n", "]"}], "-", 
+      RowBox[{"massOfWater", "[", 
+       RowBox[{"n", ",", "theta", ",", "b"}], "]"}]}], "\[Equal]", "0"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "1"}], "}"}]}], "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.695254077924972*^9, 3.695254084055235*^9}, {
+  3.695254131168871*^9, 3.695254132296877*^9}, {3.6952550613083754`*^9, 
+  3.6952550787436085`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"findB", "[", 
+  RowBox[{"1", ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6952549055783424`*^9, 3.6952549166918945`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindRoot","jsing",
+   "\"Encountered a singular Jacobian at the point \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"b\\\", \\\"}\\\"}]\\) = \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"1.`\\\", \\\"}\\\"}]\\). Try perturbing the \
+initial point(s).\"",2,46,158,29077818566126104983,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695255054552434*^9, 3.6952550884563756`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"b", "\[Rule]", "1.`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6952549191875296`*^9, 3.695254951280867*^9, {3.695255041141825*^9, 
+   3.695255054579505*^9}, 3.69525508849949*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"RegionPlot3D", "[", 
+      RowBox[{
+       RowBox[{"expBoat", "[", "n", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "1.999"}], ",", "1.9999"}], "}"}], ",", 
+       RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Opacity", "[", ".25", "]"}]}]}], "]"}], ",", 
+     RowBox[{"RegionPlot3D", "[", 
+      RowBox[{
+       RowBox[{"submergedRegion", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"\[Pi]", "/", "12"}], ",", 
+         RowBox[{"b", "/.", 
+          RowBox[{"findB", "[", 
+           RowBox[{"n", ",", 
+            RowBox[{"\[Pi]", "/", "12"}]}], "]"}]}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", 
+         RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", "0", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "1.999"}], ",", "1.9999"}], "}"}], ",", 
+       RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+       RowBox[{"AxesLabel", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Yellow"}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.4", ",", "1.5", ",", "2", ",", "2.5", ",", "3"}], "}"}]}], 
+    "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6952541433069935`*^9, 3.6952542074083695`*^9}, {
+  3.6952542428125086`*^9, 3.695254333816496*^9}, {3.6952544245427103`*^9, 
+  3.6952544931591625`*^9}, {3.695254543175212*^9, 3.695254610163279*^9}, {
+  3.6952546477915134`*^9, 3.6952546688555727`*^9}, {3.6952547153722205`*^9, 
+  3.695254783277787*^9}, {3.695255136841736*^9, 3.6952551455207863`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 0.4, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], {0.4, 1.5, 2, 2.5, 3}}}, Typeset`size$$ = {
+    56., {2., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$850511$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0.4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$850511$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        RegionPlot3D[
+         $CellContext`expBoat[$CellContext`n$$], {$CellContext`y, -2, 
+          2}, {$CellContext`z, 0, 2}, {$CellContext`x, -1.999, 1.9999}, Axes -> 
+         True, AxesLabel -> Automatic, Mesh -> None, PlotStyle -> 
+         Opacity[0.25]], 
+        RegionPlot3D[
+         $CellContext`submergedRegion[$CellContext`n$$, Pi/12, 
+          ReplaceAll[$CellContext`b, 
+           $CellContext`findB[$CellContext`n$$, Pi/12]]], {$CellContext`y, -2,
+           2}, {$CellContext`z, 0, 2}, {$CellContext`x, -1.999, 1.9999}, Axes -> 
+         True, AxesLabel -> Automatic, Mesh -> None, PlotStyle -> Yellow]], 
+      "Specifications" :> {{$CellContext`n$$, {0.4, 1.5, 2, 2.5, 3}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{138., {49., 56.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6952547864634*^9, 3.695254803570386*^9}, {
+   3.6952548774658413`*^9, 3.695254883646276*^9}, 3.6952550911234784`*^9, 
+   3.6952551457152734`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DiscretizeRegion","drf",
+   "\"\\!\\(\\*RowBox[{\\\"DiscretizeRegion\\\"}]\\) was unable to discretize \
+the region \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]\\).\"",2,139,41,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311763957433*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate","femtemnbb",
+   "\"The bounds for \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", SuperscriptBox[\\\"x\\\", \
+\\\"2\\\"]}], \\\")\\\"}]}]}], \\\"\[LessEqual]\\\", \\\"z\\\", \\\"\
+\[LessEqual]\\\", \\\"1\\\"}], \\\"&&\\\", RowBox[{\\\"z\\\", \
+\\\"\[LessEqual]\\\", RowBox[{RowBox[{\\\"1.`\\\", \
+\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", SqrtBox[\\\"3\\\"]}], \
+\\\")\\\"}], \\\" \\\", \\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\) are \
+\\!\\(\\*RowBox[{\\\"Region`RegionProperty\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \
+\\\"+\\\", RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}]}], \
+\\\"\[LessEqual]\\\", \\\"z\\\", \\\"\[LessEqual]\\\", \\\"1\\\"}], \
+\\\"&&\\\", RowBox[{\\\"z\\\", \\\"\[LessEqual]\\\", \
+RowBox[{RowBox[{\\\"1.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}], \\\" \\\", \
+\\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"y\\\", \
+\\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"BoundingBox\\\\\\\"\\\"}], \\\"]\\\"}]\\). Unless finite numeric \
+bounds are specified, the mesh generation will constrain the region to have \
+finite bounds.\"",2,139,42,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117650061803`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DiscretizeRegion","drf",
+   "\"\\!\\(\\*RowBox[{\\\"DiscretizeRegion\\\"}]\\) was unable to discretize \
+the region \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]\\).\"",2,139,43,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117651330767`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate","femtemnbb",
+   "\"The bounds for \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", SuperscriptBox[\\\"x\\\", \
+\\\"2\\\"]}], \\\")\\\"}]}]}], \\\"\[LessEqual]\\\", \\\"z\\\", \\\"\
+\[LessEqual]\\\", \\\"1\\\"}], \\\"&&\\\", RowBox[{\\\"z\\\", \
+\\\"\[LessEqual]\\\", RowBox[{RowBox[{\\\"1.`\\\", \
+\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", SqrtBox[\\\"3\\\"]}], \
+\\\")\\\"}], \\\" \\\", \\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\) are \
+\\!\\(\\*RowBox[{\\\"Region`RegionProperty\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \
+\\\"+\\\", RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}]}], \
+\\\"\[LessEqual]\\\", \\\"z\\\", \\\"\[LessEqual]\\\", \\\"1\\\"}], \
+\\\"&&\\\", RowBox[{\\\"z\\\", \\\"\[LessEqual]\\\", \
+RowBox[{RowBox[{\\\"1.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}], \\\" \\\", \
+\\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"y\\\", \
+\\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"BoundingBox\\\\\\\"\\\"}], \\\"]\\\"}]\\). Unless finite numeric \
+bounds are specified, the mesh generation will constrain the region to have \
+finite bounds.\"",2,139,44,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117661594753`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DiscretizeRegion","drf",
+   "\"\\!\\(\\*RowBox[{\\\"DiscretizeRegion\\\"}]\\) was unable to discretize \
+the region \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \
+\\\"]\\\"}]\\).\"",2,139,45,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117662727823`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"DiscretizeRegion\\\", \
+\\\"::\\\", \\\"drf\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
+this calculation.\"",2,139,46,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311766337959*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NIntegrate","femtemnbb",
+   "\"The bounds for \\!\\(\\*RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", \
+RowBox[{\\\"Times\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \\\"]\\\"}]}]], \\\"+\\\", \
+RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", SuperscriptBox[\\\"x\\\", \
+\\\"2\\\"]}], \\\")\\\"}]}]}], \\\"\[LessEqual]\\\", \\\"z\\\", \\\"\
+\[LessEqual]\\\", \\\"1\\\"}], \\\"&&\\\", RowBox[{\\\"z\\\", \
+\\\"\[LessEqual]\\\", RowBox[{RowBox[{\\\"1.`\\\", \
+\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{RowBox[{\\\"(\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", SqrtBox[\\\"3\\\"]}], \
+\\\")\\\"}], \\\" \\\", \\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\) are \
+\\!\\(\\*RowBox[{\\\"Region`RegionProperty\\\", \\\"[\\\", RowBox[{RowBox[{\\\
+\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{SuperscriptBox[\\\"\[ExponentialE]\\\", \
+RowBox[{\\\"2.5`\\\", \\\" \\\", RowBox[{\\\"Abs\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}]], \
+\\\"+\\\", RowBox[{FractionBox[\\\"1\\\", \\\"6\\\"], \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}]}]}], \
+\\\"\[LessEqual]\\\", \\\"z\\\", \\\"\[LessEqual]\\\", \\\"1\\\"}], \
+\\\"&&\\\", RowBox[{\\\"z\\\", \\\"\[LessEqual]\\\", \
+RowBox[{RowBox[{\\\"1.`\\\", \\\"\[VeryThinSpace]\\\"}], \\\"+\\\", \
+RowBox[{RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\"+\\\", \
+RowBox[{\\\"Power\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"2\\\", \
+\\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\")\\\"}], \\\" \\\", \
+\\\"y\\\"}]}]}]}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"y\\\", \
+\\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"BoundingBox\\\\\\\"\\\"}], \\\"]\\\"}]\\). Unless finite numeric \
+bounds are specified, the mesh generation will constrain the region to have \
+finite bounds.\"",2,139,47,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311767322466*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindRoot","nlnum",
+   "\"The function value \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"0.23094999925866488`\\\", \\\"\[VeryThinSpace]\\\"}], \
+\\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"NIntegrate\\\", \
+\\\"[\\\", RowBox[{\\\"1\\\", \\\",\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}], \\\"\[Element]\\\", \
+RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"LessEqual\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"&&\\\", RowBox[{\\\"LessEqual\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \
+\\\"]\\\"}]}]}], \\\"]\\\"}]}]}], \\\"}\\\"}]\\) is not a list of numbers \
+with dimensions \\!\\(\\*RowBox[{\\\"{\\\", \\\"1\\\", \\\"}\\\"}]\\) at \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"b\\\", \\\"}\\\"}]\\) = \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"1.`\\\", \\\"}\\\"}]\\).\"",2,139,48,
+   29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311773685951*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"FindRoot\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{\\\"mass\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}], \\\"-\\\", RowBox[{\\\"massOfWater\\\", \\\"[\\\", \
+RowBox[{\\\"0.4`\\\", \\\",\\\", FractionBox[\\\"\[Pi]\\\", \\\"12\\\"], \
+\\\",\\\", \\\"b\\\"}], \\\"]\\\"}]}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"b\\\", \\\",\\\", \\\"1\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement \
+rules nor a valid dispatch table, and so cannot be used for replacing.\"",2,
+   139,49,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117737300653`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindRoot","nlnum",
+   "\"The function value \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"0.23094999925866488`\\\", \\\"\[VeryThinSpace]\\\"}], \
+\\\"-\\\", RowBox[{\\\"1.`\\\", \\\" \\\", RowBox[{\\\"NIntegrate\\\", \
+\\\"[\\\", RowBox[{\\\"1\\\", \\\",\\\", RowBox[{RowBox[{\\\"{\\\", \
+RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}], \\\"\[Element]\\\", \
+RowBox[{\\\"ImplicitRegion\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{\\\"LessEqual\\\", \\\"[\\\", RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"3\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}], \
+\\\"&&\\\", RowBox[{\\\"LessEqual\\\", \\\"[\\\", RowBox[{\\\"\[LeftSkeleton]\
+\\\", \\\"2\\\", \\\"\[RightSkeleton]\\\"}], \\\"]\\\"}]}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"y\\\", \\\",\\\", \\\"z\\\"}], \\\"}\\\"}]}], \
+\\\"]\\\"}]}]}], \\\"]\\\"}]}]}], \\\"}\\\"}]\\) is not a list of numbers \
+with dimensions \\!\\(\\*RowBox[{\\\"{\\\", \\\"1\\\", \\\"}\\\"}]\\) at \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"b\\\", \\\"}\\\"}]\\) = \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"1.`\\\", \\\"}\\\"}]\\).\"",2,139,50,
+   29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.6953117853468027`*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll","reps",
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"FindRoot\\\", \\\"[\\\", \
+RowBox[{RowBox[{RowBox[{RowBox[{\\\"mass\\\", \\\"[\\\", \\\"0.4`\\\", \
+\\\"]\\\"}], \\\"-\\\", RowBox[{\\\"massOfWater\\\", \\\"[\\\", \
+RowBox[{\\\"0.4`\\\", \\\",\\\", FractionBox[\\\"\[Pi]\\\", \\\"12\\\"], \
+\\\",\\\", \\\"b\\\"}], \\\"]\\\"}]}], \\\"\[Equal]\\\", \\\"0\\\"}], \\\",\\\
+\", RowBox[{\\\"{\\\", RowBox[{\\\"b\\\", \\\",\\\", \\\"1\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}], \\\"}\\\"}]\\) is neither a list of replacement \
+rules nor a valid dispatch table, and so cannot be used for replacing.\"",2,
+   139,51,29078185542545304571,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.695311785392558*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 104, 1, 101, "Title"],
+Cell[CellGroupData[{
+Cell[709, 27, 155, 2, 49, "Subsection"],
+Cell[867, 31, 3997, 125, 142, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[4889, 160, 176, 3, 30, "Input"],
+Cell[5068, 165, 474, 16, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5579, 186, 158, 3, 30, InheritFromParent],
+Cell[5740, 191, 626, 15, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6403, 211, 1151, 27, 30, "Input"],
+Cell[7557, 240, 2242, 41, 516, "Output"],
+Cell[9802, 283, 296, 7, 21, "Message"],
+Cell[10101, 292, 294, 7, 21, "Message"],
+Cell[10398, 301, 294, 7, 21, "Message"],
+Cell[10695, 310, 347, 7, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11079, 322, 871, 23, 30, "Input"],
+Cell[11953, 347, 1835, 37, 524, "Output"],
+Cell[13791, 386, 289, 6, 21, "Message"],
+Cell[14083, 394, 287, 6, 21, "Message"],
+Cell[14373, 402, 289, 6, 21, "Message"],
+Cell[14665, 410, 349, 7, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15051, 422, 928, 23, 30, "Input"],
+Cell[15982, 447, 1997, 38, 524, "Output"],
+Cell[17982, 487, 296, 7, 21, "Message"],
+Cell[18281, 496, 298, 7, 21, "Message"],
+Cell[18582, 505, 298, 7, 21, "Message"],
+Cell[18883, 514, 349, 7, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19269, 526, 779, 21, 30, "Input"],
+Cell[20051, 549, 1813, 36, 130, "Output"],
+Cell[21867, 587, 288, 6, 21, "Message"],
+Cell[22158, 595, 288, 6, 21, "Message"],
+Cell[22449, 603, 290, 6, 21, "Message"],
+Cell[22742, 611, 349, 7, 21, "Message"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23140, 624, 124, 1, 49, "Subsection"],
+Cell[23267, 627, 2444, 69, 104, "Input",
+ InitializationCell->True],
+Cell[25714, 698, 2423, 68, 104, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[28162, 770, 151, 3, 30, "Input"],
+Cell[28316, 775, 407, 8, 21, "Message"],
+Cell[28726, 785, 221, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28984, 795, 2128, 51, 50, "Input"],
+Cell[31115, 848, 2318, 45, 122, "Output"],
+Cell[33436, 895, 417, 8, 21, "Message"],
+Cell[33856, 905, 2545, 38, 59, "Message"],
+Cell[36404, 945, 419, 8, 21, "Message"],
+Cell[36826, 955, 2545, 38, 59, "Message"],
+Cell[39374, 995, 419, 8, 21, "Message"],
+Cell[39796, 1005, 349, 7, 21, "Message"],
+Cell[40148, 1014, 2543, 38, 59, "Message"],
+Cell[42694, 1054, 1217, 20, 21, "Message"],
+Cell[43914, 1076, 766, 13, 38, "Message"],
+Cell[44683, 1091, 1219, 20, 21, "Message"],
+Cell[45905, 1113, 764, 13, 38, "Message"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
